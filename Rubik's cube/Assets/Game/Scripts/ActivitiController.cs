@@ -8,6 +8,8 @@ public class ActivitiController : MonoBehaviour
     private MouseActivities mouseActivities;
     private CubeRotate cubeRotate;
 
+    private float Ratio = 365/180;
+
     private bool scrambling = false;
     private float initialSpeed;
 
@@ -18,6 +20,7 @@ public class ActivitiController : MonoBehaviour
         keyboardActivities = GetComponent<KeyboardActivities>();
         mouseActivities = GetComponent<MouseActivities>();
         cubeRotate = GetComponent<CubeRotate>();
+
     }
 
     // Update is called once per frame
@@ -42,6 +45,7 @@ public class ActivitiController : MonoBehaviour
                 keyboardActivities.KeyboardInputUpdate();
             }
         }
+
     }
 
     public void Scramble(bool blind=false)

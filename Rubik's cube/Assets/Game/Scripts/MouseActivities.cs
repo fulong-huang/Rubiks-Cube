@@ -8,6 +8,10 @@ public class MouseActivities : MonoBehaviour
 {
     public int speed = 500;
     public float Sensitive = 0.2f;
+    public Transform CamBL;
+    public Transform CamTR;
+
+
     private bool leftClick  = false;
     private bool rightClick = false;
 
@@ -43,10 +47,15 @@ public class MouseActivities : MonoBehaviour
 
     public void MouseInputUpdate()
     {
-        if(!resetting){ 
+        if (!resetting){ 
             if (Input.GetMouseButtonDown(0)) // Left Click
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Vector3 MousePosition = Input.mousePosition;
+                MousePosition -= CamBL.position;
+                Vector2 por = CamTR.position - CamBL.position;
+                MousePosition /= por;
+                MousePosition.z = 0;
+                Ray ray = Camera.main.ViewportPointToRay(MousePosition);
                 if(Physics.Raycast(ray, out hit)){
                     leftClick = true;
                 }
@@ -72,7 +81,7 @@ public class MouseActivities : MonoBehaviour
         }
 
 
-        if(leftClick){
+        if (leftClick){
             LeftClickDrag();
             if (Input.GetMouseButtonUp(0))
             {
@@ -141,8 +150,8 @@ public class MouseActivities : MonoBehaviour
         }
     }
     private void GetMouseAxis(){
-        MouseAxis.x = Input.GetAxis("Mouse X");
-        MouseAxis.y = Input.GetAxis("Mouse Y");
+        MouseAxis.x = Input.GetAxis(Spelling.MOUSEX);
+        MouseAxis.y = Input.GetAxis(Spelling.MOUSEY);
     }
 
     private void Decision(int[][] targetMove){
