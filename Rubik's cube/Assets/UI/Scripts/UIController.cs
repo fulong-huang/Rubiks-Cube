@@ -14,10 +14,16 @@ public class UIController : MonoBehaviour
         transition = GetComponent<Animator>();
     }
 
+    public void MainMenu()
+    {
+        scene = Scene.MENU;
+        Transition();
+    }
+
     public void NormalGame()
     {
         scene = Scene.NORMAL;
-        Transition();
+        //Transition();
     }
 
     public void FreePlay()
@@ -56,4 +62,12 @@ public class UIController : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void ReloadScene()
+    {
+        scene = SceneManager.GetActiveScene().name;
+        Transition();
+    }
+
+
 }
