@@ -392,6 +392,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213931593}
   m_CullTransparentMesh: 1
+--- !u!1 &231178331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231178332}
+  m_Layer: 5
+  m_Name: CamBL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &231178332
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231178331}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1690443610}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &435058125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -535,6 +570,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4364940162439179679, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364940162439179679, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 4602923432512081319, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -545,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5273847216813733986, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7818907307253067176, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
       propertyPath: m_text
@@ -966,11 +1009,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656328353}
   m_CullTransparentMesh: 1
---- !u!224 &695109906 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3284833812909396311, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
-  m_PrefabInstance: {fileID: 435058125}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,17 +1581,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690443609}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 695109906}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 231178332}
+  - {fileID: 1847973681}
+  m_Father: {fileID: 435058126}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 600}
+  m_SizeDelta: {x: 1080, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690443611
 MonoBehaviour:
@@ -1590,6 +1630,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690443609}
   m_CullTransparentMesh: 1
+--- !u!1 &1847973680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847973681}
+  m_Layer: 5
+  m_Name: CamTR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1847973681
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847973680}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1690443610}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929089872 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4943449472410228512, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
@@ -1841,6 +1916,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+      propertyPath: c
+      value: 
+      objectReference: {fileID: 1690443609}
+    - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+      propertyPath: CamX
+      value: 
+      objectReference: {fileID: 231178332}
+    - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+      propertyPath: CamY
+      value: 
+      objectReference: {fileID: 1847973681}
+    - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+      propertyPath: CamBL
+      value: 
+      objectReference: {fileID: 231178332}
+    - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+      propertyPath: CamBR
+      value: 
+      objectReference: {fileID: 1847973681}
+    - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+      propertyPath: CamTL
+      value: 
+      objectReference: {fileID: 231178332}
+    - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+      propertyPath: CamTR
+      value: 
+      objectReference: {fileID: 1847973681}
     - target: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
       propertyPath: speed
       value: 1000
