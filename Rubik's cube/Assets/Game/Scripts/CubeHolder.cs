@@ -24,7 +24,7 @@ public class CubeHolder : MonoBehaviour
 
     public GameObject[] Pieces = new GameObject[27];
 
-    public void CheckSolved()
+    public bool CheckSolved()
     {
         string center;
         Vector3 direction = Pieces[0].transform.GetChild(0).up;
@@ -40,11 +40,12 @@ public class CubeHolder : MonoBehaviour
                     Vector3.Distance(direction, currentPiece.transform.GetChild(0).up) > 1)
                 {
                     Debug.Log("Not Solved...");
-                    return;
+                    return false;
                 }
             }
         }
         Debug.Log("Cube Solved!!!");
+        return true;
     }
 
     public void GroupSide(int[] side, int piece)

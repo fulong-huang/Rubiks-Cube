@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class ActivitiController : MonoBehaviour
 {
+    // 0 -> Free Play,  1 -> Normal,  2 -> Blind;
+    public int mode = 0;
+    public Transform canv;
+    public bool waiting = false;
+
+    private UIController uIController;
+
     private KeyboardActivities keyboardActivities;
     private MouseActivities mouseActivities;
     private CubeRotate cubeRotate;
 
-    private float Ratio = 365/180;
+    private CubeHolder cubeHolder;
 
     private bool scrambling = false;
     private float initialSpeed;
@@ -21,6 +28,8 @@ public class ActivitiController : MonoBehaviour
         mouseActivities = GetComponent<MouseActivities>();
         cubeRotate = GetComponent<CubeRotate>();
 
+        uIController = canv.GetComponent<UIController>();
+        cubeHolder = GetComponent<CubeHolder>();
     }
 
     // Update is called once per frame
@@ -32,9 +41,13 @@ public class ActivitiController : MonoBehaviour
             {
                 scrambling = false;
                 cubeRotate.speed = initialSpeed;
+                if(mode != 0)
+                {
+                    canv.GetChild(0).GetChild(3).gameObject.SetActive(true);
+                }
             }
         }
-        else
+        else if(!waiting)
         {
             if (!keyboardActivities.BUSY())
             {
@@ -44,20 +57,35 @@ public class ActivitiController : MonoBehaviour
             {
                 keyboardActivities.KeyboardInputUpdate();
             }
+            if (mode != 0 && cubeHolder.CheckSolved())
+            {
+                waiting = true;
+                uIController.solved();
+                canv.GetChild(0).GetChild(5).gameObject.SetActive(true);
+            }
         }
 
     }
 
-    public void Scramble(bool blind=false)
+    public void Scramble()
     {
         if (scrambling) return;
         scrambling = true;
+
+        if(mode != 0)
+        {
+            HideSticker();
+            canv.GetChild(0).GetChild(2).gameObject.SetActive(false);
+        }
+
+
         initialSpeed = cubeRotate.speed;
         cubeRotate.speed = initialSpeed * 3;
         int decision;
         int turns = 20;
         int bldTurns = Random.Range(0, 6);
-        if (blind) {
+
+        if (mode == 2) {
             if (bldTurns != 0) {
                 if(bldTurns < 3)
                 {
@@ -135,7 +163,7 @@ public class ActivitiController : MonoBehaviour
             }
             keyboardActivities.AddQ(move);
         }
-        if (blind)
+        if (mode == 2)
         {
             for (int i = 0; i < bldTurns; i++)
             {
@@ -172,6 +200,31 @@ public class ActivitiController : MonoBehaviour
                 keyboardActivities.AddQ(move);
             }
         }
+    }
+
+    private void HideSticker()
+    {
+        Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer(Spelling.STICKER));
+    }
+
+    public void RevealStickers()
+    {
+        canv.GetChild(0).GetChild(3).gameObject.SetActive(false);
+        Camera.main.cullingMask ^= 1 << LayerMask.NameToLayer(Spelling.STICKER);
+        if (mode == 1)
+        {
+            canv.GetChild(2).gameObject.SetActive(true);
+            canv.GetChild(0).GetChild(4).gameObject.SetActive(true);
+            uIController.StartNormalGame();
+            waiting = false;
+        }
+    }
+
+    public void RestartGame()
+    {
+        canv.GetChild(1).gameObject.SetActive(false);
+        canv.GetChild(0).GetChild(5).gameObject.SetActive(false);
+        Scramble();
     }
 
 }

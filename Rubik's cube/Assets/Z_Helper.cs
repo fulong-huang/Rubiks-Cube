@@ -17,6 +17,8 @@ public class Spelling
     public const string END = "End";
     public const string MOUSEX = "Mouse X";
     public const string MOUSEY = "Mouse Y";
+
+    public const string STICKER = "Stickers";
 }
 
 

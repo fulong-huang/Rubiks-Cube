@@ -139,6 +139,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5861128502504047832, guid: 4b63ca69441423a4499f034e76dd65eb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861128502504047832, guid: 4b63ca69441423a4499f034e76dd65eb, type: 3}
+      propertyPath: m_TagString
+      value: Stickers
+      objectReference: {fileID: 0}
     - target: {fileID: 6493409998072946274, guid: 4b63ca69441423a4499f034e76dd65eb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -200,6 +208,14 @@ PrefabInstance:
     - target: {fileID: 5861128502504047832, guid: 4b63ca69441423a4499f034e76dd65eb, type: 3}
       propertyPath: m_Name
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861128502504047832, guid: 4b63ca69441423a4499f034e76dd65eb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861128502504047832, guid: 4b63ca69441423a4499f034e76dd65eb, type: 3}
+      propertyPath: m_TagString
+      value: Stickers
       objectReference: {fileID: 0}
     - target: {fileID: 6493409998072946274, guid: 4b63ca69441423a4499f034e76dd65eb, type: 3}
       propertyPath: m_RootOrder
