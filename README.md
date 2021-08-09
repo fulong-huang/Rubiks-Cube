@@ -19,15 +19,16 @@
   - Right click: Rotating the whole cube to look around.
   
   ### Buttons:
-  - 3x3: Start solving a 3x3 Rubik's cube, with 15 second inspect time. (Not Available yet)
-  - 3x3 BLD: Start solving 3x3 Rubik's cube when ready, and all sticker will be hidden once any action that change cube's state is taken. (Not Available yet)
+  - 3x3: Start solving a 3x3 Rubik's cube, with 15 second inspecting time. (Mostly done, with some feature missing)
+  - 3x3 BLD: Start solving 3x3 Rubik's cube with blindfold, all sticker will be hidden once the user is ready. (Not Available yet)
   - FreePlay: Freely using all feature in the game and mess with the cube.
   - setting: Setting page. (Not Available yet)
   - quit: quit the game.
   
   - Scramble (only in free play mode): Scramble the cube with 20 turns without undoing any previous scramble (possible repeat if pressed again).
   - Reset (only in free play mode): Restart the scene and reset all movements.
+  - Sticker (only in free play mode): show or hide stickers (Not yet implimented).
   - FreeRotate (Avialiable in game and setting): Switch between rotating along #one axis# at a time and freely rotate around #all axis# at once.
-  - ~~Solved?: Will be remove soon. Print out if the current cube is solved or not.~~
+  - ~~Solved?: removed. Print out if the current cube is solved or not.~~
   - Menu: Back to main menu.
   
