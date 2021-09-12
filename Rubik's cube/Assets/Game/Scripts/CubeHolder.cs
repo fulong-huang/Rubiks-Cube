@@ -24,6 +24,8 @@ public class CubeHolder : MonoBehaviour
 
     public GameObject[] Pieces = new GameObject[27];
 
+    private bool stateChanged;
+
     public bool CheckSolved()
     {
         string center;
@@ -67,9 +69,18 @@ public class CubeHolder : MonoBehaviour
         }
     }
 
+    public void StartNewState()
+    {
+        stateChanged = false;
+    }
+    public bool GetStateChanged()
+    {
+        return stateChanged;
+    }
 
     public void SwitchPieces(int[] side, int n)
     {
+        stateChanged = true;
         if (n < 0) n += 360;
         n /= 90;
         GameObject obj1;
@@ -117,6 +128,7 @@ public class CubeHolder : MonoBehaviour
                     Pieces[side[i-7]] = obj2;
                 }
             }
+            stateChanged = false;
         }
     }
 

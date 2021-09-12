@@ -19,6 +19,7 @@ public class ActivitiController : MonoBehaviour
 
     private bool scrambling = false;
     private float initialSpeed;
+    private bool started;
 
 
     // Start is called before the first frame update
@@ -37,18 +38,28 @@ public class ActivitiController : MonoBehaviour
     {
         if (scrambling)
         {
-            if (!keyboardActivities.ProcessInput())
+            if (!keyboardActivities.ProcessingInput())
             {
                 scrambling = false;
                 cubeRotate.speed = initialSpeed;
                 if(mode != 0)
                 {
                     canv.GetChild(0).GetChild(3).gameObject.SetActive(true);
+                    cubeHolder.StartNewState();
+                    started = false;
                 }
             }
         }
         else if(!waiting)
         {
+            if (!started)
+            {
+                if(cubeHolder.GetStateChanged() == true)
+                {
+                    uIController.StartTimer();
+                    started = true;
+                }
+            }
             if (!keyboardActivities.BUSY())
             {
                 mouseActivities.MouseInputUpdate();
@@ -57,7 +68,7 @@ public class ActivitiController : MonoBehaviour
             {
                 keyboardActivities.KeyboardInputUpdate();
             }
-            if (mode != 0 && cubeHolder.CheckSolved())
+            if (mode == 1 && cubeHolder.CheckSolved())
             {
                 waiting = true;
                 uIController.solved();
@@ -82,9 +93,10 @@ public class ActivitiController : MonoBehaviour
         initialSpeed = cubeRotate.speed;
         cubeRotate.speed = initialSpeed * 3;
         int decision;
-        int turns = 20;
+        int turns = 2;
         int bldTurns = Random.Range(0, 6);
 
+        int[] scrambles;
         if (mode == 2) {
             if (bldTurns != 0) {
                 if(bldTurns < 3)
@@ -96,10 +108,9 @@ public class ActivitiController : MonoBehaviour
                     bldTurns = 2;
                 }
             }
-            turns += bldTurns;
+            scrambles = new int[turns + bldTurns];
         }
-
-        int[] scrambles = new int[turns];
+        scrambles = new int[turns];
 
         scrambles[0] = Random.Range(0, 6);
         for (int i = 1; i < turns; i++)
@@ -129,7 +140,7 @@ public class ActivitiController : MonoBehaviour
         }
 
         string move = "M";
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < turns; i++)
         {
             switch (scrambles[i])
             {

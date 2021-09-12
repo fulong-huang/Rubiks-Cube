@@ -46,10 +46,10 @@ public class KeyboardActivities : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y)) AddQ("Y");
         if (Input.GetKeyDown(KeyCode.Z)) AddQ("Z");
 
-        ProcessInput();
+        ProcessingInput();
     }
 
-    public bool ProcessInput()
+    public bool ProcessingInput()
     {
         if (!busy && Q.Count != 0)
         {

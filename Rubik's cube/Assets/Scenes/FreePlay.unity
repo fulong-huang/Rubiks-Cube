@@ -427,11 +427,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &338801980 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 918384082848573106, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
-  m_PrefabInstance: {fileID: 435058125}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &435058125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1629,6 +1624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f0166266a8c4bb6b673fe1725249f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2094646789 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3284833812909396311, guid: bbca4fa7fd58c4a438f4767dcb27f58b, type: 3}
+  m_PrefabInstance: {fileID: 435058125}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4943449474335835248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1671,7 +1671,7 @@ PrefabInstance:
     - target: {fileID: 4943449472410228517, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
       propertyPath: canv
       value: 
-      objectReference: {fileID: 338801980}
+      objectReference: {fileID: 2094646789}
     - target: {fileID: 4943449472410228542, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
       propertyPath: m_Name
       value: The Cube Holder
