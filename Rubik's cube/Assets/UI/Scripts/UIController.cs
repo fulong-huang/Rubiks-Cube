@@ -19,7 +19,6 @@ public class UIController : MonoBehaviour
 
     private float countDownValue;
     private float timer;
-    private string timeString;
 
     private Animator transition;
     private string scene;

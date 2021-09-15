@@ -26,12 +26,6 @@ public class KeyboardActivities : MonoBehaviour
     // Update is called once per frame
     public void KeyboardInputUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))    ctrl = true;
-        if (Input.GetKeyUp(KeyCode.LeftControl) || Input.GetKeyUp(KeyCode.RightControl))        ctrl = false;
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))        shift = true;
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))        shift = false;
-
         if (Input.GetKeyDown(KeyCode.U)) AddQ("U");
         if (Input.GetKeyDown(KeyCode.D)) AddQ("D");
         if (Input.GetKeyDown(KeyCode.R)) AddQ("R");
@@ -61,6 +55,8 @@ public class KeyboardActivities : MonoBehaviour
 
     public void AddQ(string s)
     {
+        shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        ctrl = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
         if (ctrl)
         {
             if(s != "M" && s != "S" && s != "E" && s != "X" && s != "Y" && s != "Z")

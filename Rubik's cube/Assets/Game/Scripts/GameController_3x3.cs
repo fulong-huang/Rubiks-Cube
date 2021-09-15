@@ -7,6 +7,8 @@ public class GameController_3x3 : MonoBehaviour
     public Transform canv;
     public bool waiting = false;
 
+    private int turns = 20;
+
     private UIController uIController;
 
     private KeyboardActivities keyboardActivities;
@@ -90,7 +92,6 @@ public class GameController_3x3 : MonoBehaviour
         initialSpeed = cubeRotate.speed;
         cubeRotate.speed = initialSpeed * 3;
         int decision;
-        int turns = 1;
 
         int[] scrambles = new int[turns];
 
