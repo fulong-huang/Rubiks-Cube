@@ -1702,6 +1702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canv: {fileID: 654338257}
   waiting: 1
+  turns: 20
 --- !u!1 &877929486
 GameObject:
   m_ObjectHideFlags: 0

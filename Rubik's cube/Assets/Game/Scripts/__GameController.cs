@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivitiController : MonoBehaviour
+public class __GameController : MonoBehaviour
 {
     // 0 -> Free Play,  1 -> Normal,  2 -> Blind;
     public int mode = 0;
@@ -42,7 +42,7 @@ public class ActivitiController : MonoBehaviour
             {
                 scrambling = false;
                 cubeRotate.speed = initialSpeed;
-                if(mode != 0)
+                if (mode != 0)
                 {
                     canv.GetChild(0).GetChild(3).gameObject.SetActive(true);
                     cubeHolder.StartNewState();
@@ -50,11 +50,11 @@ public class ActivitiController : MonoBehaviour
                 }
             }
         }
-        else if(!waiting)
+        else if (!waiting)
         {
             if (!started)
             {
-                if(cubeHolder.GetStateChanged() == true)
+                if (cubeHolder.GetStateChanged() == true)
                 {
                     uIController.StartTimer();
                     started = true;
@@ -83,7 +83,7 @@ public class ActivitiController : MonoBehaviour
         if (scrambling) return;
         scrambling = true;
 
-        if(mode != 0)
+        if (mode != 0)
         {
             HideSticker();
             canv.GetChild(0).GetChild(2).gameObject.SetActive(false);
@@ -97,9 +97,11 @@ public class ActivitiController : MonoBehaviour
         int bldTurns = Random.Range(0, 6);
 
         int[] scrambles;
-        if (mode == 2) {
-            if (bldTurns != 0) {
-                if(bldTurns < 3)
+        if (mode == 2)
+        {
+            if (bldTurns != 0)
+            {
+                if (bldTurns < 3)
                 {
                     bldTurns = 1;
                 }
@@ -119,7 +121,7 @@ public class ActivitiController : MonoBehaviour
             scrambles[i] = decision;
             if (scrambles[i - 1] == decision)
                 i--;
-            else if(i > 1)
+            else if (i > 1)
             {
                 if (decision % 2 == 0)
                 {
@@ -178,7 +180,7 @@ public class ActivitiController : MonoBehaviour
         {
             for (int i = 0; i < bldTurns; i++)
             {
-                switch (scrambles[19+i])
+                switch (scrambles[19 + i])
                 {
                     case 0:
                         move = "r";

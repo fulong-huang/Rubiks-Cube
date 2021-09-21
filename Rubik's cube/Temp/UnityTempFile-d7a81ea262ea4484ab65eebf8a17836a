@@ -320,5 +320,6 @@
 "Assets/Game/Scripts/GameController_3x3.cs"
 "Assets/Game/Scripts/KeyboardActivities.cs"
 "Assets/Game/Scripts/MouseActivities.cs"
+"Assets/Game/Scripts/__GameController.cs"
 "Assets/UI/Scripts/UIController.cs"
 "Assets/Z_Helper.cs"

@@ -20,7 +20,7 @@ public class KeyboardActivities : MonoBehaviour
 
     public bool BUSY()
     {
-        return Q.Count != 0;
+        return Q.Count != 0 || busy;
     }
 
     // Update is called once per frame
@@ -111,6 +111,7 @@ public class KeyboardActivities : MonoBehaviour
         Q.RemoveAt(0);
         CubeRotate.CompleteTask(s);
     }
+
 
     public void FinishTask()
     {

@@ -55,6 +55,7 @@ public class UIController : MonoBehaviour
     public void FreePlay()
     {
         scene = Scene.FP;
+        countDown = timing = false;
         Transition();
     }
 

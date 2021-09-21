@@ -7,7 +7,9 @@ public class GameController_3x3 : MonoBehaviour
     public Transform canv;
     public bool waiting = false;
 
+    [SerializeField]
     private int turns = 20;
+    private bool moved = false;
 
     private UIController uIController;
 
@@ -59,7 +61,7 @@ public class GameController_3x3 : MonoBehaviour
                     started = true;
                 }
             }
-            if(started)
+            if(started && moved && !keyboardActivities.BUSY() && !mouseActivities.BUSY())
             {
                 if (cubeHolder.CheckSolved())
                 {
@@ -67,6 +69,8 @@ public class GameController_3x3 : MonoBehaviour
                     uIController.solved();
                     canv.GetChild(0).GetChild(5).gameObject.SetActive(true);
                 }
+                
+                moved = false;
             }
             if (!keyboardActivities.BUSY())
             {
@@ -75,6 +79,10 @@ public class GameController_3x3 : MonoBehaviour
             if (!mouseActivities.BUSY())
             {
                 keyboardActivities.KeyboardInputUpdate();
+            }
+            if(keyboardActivities.BUSY() || mouseActivities.BUSY())
+            {
+                moved = true;
             }
         }
 

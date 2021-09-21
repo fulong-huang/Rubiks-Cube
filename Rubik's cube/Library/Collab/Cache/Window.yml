@@ -14,11 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Game/Scripts/GameController_3x3.cs
-    - Assets/Game/Scripts/KeyboardActivities.cs
-    - Assets/UI/Scripts/UIController.cs
     - 
-    m_Values: 00000000
+    m_Values: 01
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
