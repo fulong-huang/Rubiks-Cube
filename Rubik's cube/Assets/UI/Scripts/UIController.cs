@@ -40,16 +40,11 @@ public class UIController : MonoBehaviour
         }
     }
 
+    // ***************** Transitions *****************
     public void BLD()
     {
         scene = Scene.BLD;
-        Debug.Log("Not Avaliable Yet");
-        //Transition();
-    }
-
-    public void FinishTransitionAnimation()
-    {
-        SceneManager.LoadScene(scene);
+        Transition();
     }
 
     public void FreePlay()
@@ -71,12 +66,6 @@ public class UIController : MonoBehaviour
         Transition();
     }
 
-    public void QuitGame()
-    {
-        Debug.Log("QUITTING");
-        Application.Quit();
-    }
-
     public void ReloadScene()
     {
         scene = SceneManager.GetActiveScene().name;
@@ -90,15 +79,34 @@ public class UIController : MonoBehaviour
         //Transition();
     }
 
+    public void Transition()
+    {
+        transition.SetTrigger(Spelling.END);
+    }
+
+    public void FinishTransitionAnimation()
+    {
+        SceneManager.LoadScene(scene);
+    }
+
+    // ***************** End of Transitions *****************
+
+
+
+    public void QuitGame()
+    {
+        Debug.Log("QUITTING");
+        Application.Quit();
+    }
+
+    public void StartBlindGame() {
+        StartTimer();
+    }
+
     public void StartNormalGame()
     {
         countDownValue = 15f;
         countDown = true;
-    }
-
-    public void Transition()
-    {
-        transition.SetTrigger(Spelling.END);
     }
 
     private void InspectTimeCountDown()
@@ -144,24 +152,37 @@ public class UIController : MonoBehaviour
         {
             countDown = false;
             transform.GetChild(3).gameObject.SetActive(false);
+
+            countDownMesh.color = Color.white;
+            if (DNF)
+                timerMesh.color = Color.red;
+            else if (p2)
+                timerMesh.color = Color.yellow;
+
         }
         transform.GetChild(1).gameObject.SetActive(true);
         transform.GetChild(0).GetChild(4).gameObject.SetActive(false);
-        timing = true;
-        timer = 0f;
 
-        countDownMesh.color = Color.white;
-        if (DNF)
-            timerMesh.color = Color.red;
-        else if (p2)
-            timerMesh.color = Color.yellow;
         DNF = false;
         p2 = false;
+        timing = true;
+        timer = 0f;
     }
 
-    public void solved()
+    public void stopTimer()
     {
         timing = false;
+    }
+
+    public void solved(char c = ' ')
+    {
+        if(c != ' ')
+        {
+            if (c == 'D')
+                DNF = true;
+            else
+                p2 = true;
+        }
         transform.GetChild(1).gameObject.SetActive(false);
         transform.GetChild(2).gameObject.SetActive(true);
         if (DNF)

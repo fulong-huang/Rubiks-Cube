@@ -1701,7 +1701,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canv: {fileID: 654338257}
-  waiting: 1
   turns: 20
 --- !u!1 &877929486
 GameObject:
@@ -2051,7 +2050,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 852937090}
         m_TargetAssemblyTypeName: GameController_3x3, Assembly-CSharp
-        m_MethodName: RevealStickers
+        m_MethodName: StartTimer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

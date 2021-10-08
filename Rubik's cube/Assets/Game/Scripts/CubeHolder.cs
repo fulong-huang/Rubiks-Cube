@@ -175,5 +175,5 @@ public class Side
     public static int[] WFRONT = { 10, 0, 1, 2, 11, 19, 18, 17, 9, 3, 4, 5, 13, 22, 21, 20, 12 };
     public static int[] WBACK = { 15, 8, 7, 6, 14, 23, 24, 25, 16, 12, 20, 21, 22, 13, 5, 4, 3 };
 
-
+    public static string[] moveStrings = { "U", "D", "L", "R", "F", "B"};
 }

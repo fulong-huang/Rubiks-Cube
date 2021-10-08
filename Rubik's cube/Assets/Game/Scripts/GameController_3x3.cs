@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController_3x3 : MonoBehaviour
 {
     public Transform canv;
-    public bool waiting = false;
+    private bool waiting = true;
 
     [SerializeField]
     private int turns = 20;
@@ -66,6 +66,7 @@ public class GameController_3x3 : MonoBehaviour
                 if (cubeHolder.CheckSolved())
                 {
                     waiting = true;
+                    uIController.stopTimer();
                     uIController.solved();
                     canv.GetChild(0).GetChild(5).gameObject.SetActive(true);
                 }
@@ -172,11 +173,16 @@ public class GameController_3x3 : MonoBehaviour
         Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer(Spelling.STICKER));
     }
 
-    public void RevealStickers()
+    private void RevealStickers()
     {
-        canv.GetChild(0).GetChild(3).gameObject.SetActive(false);
         Camera.main.cullingMask ^= 1 << LayerMask.NameToLayer(Spelling.STICKER);
+    }
 
+    public void StartTimer()
+    {
+        RevealStickers();
+
+        canv.GetChild(0).GetChild(3).gameObject.SetActive(false);
         canv.GetChild(3).gameObject.SetActive(true);
         canv.GetChild(0).GetChild(4).gameObject.SetActive(true);
         uIController.StartNormalGame();

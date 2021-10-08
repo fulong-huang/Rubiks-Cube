@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4943449472410228513}
   - component: {fileID: 4943449472410228515}
   - component: {fileID: 4943449472410228516}
-  - component: {fileID: 4943449472410228517}
   m_Layer: 0
   m_Name: The Cube Holder
   m_TagString: Untagged
@@ -132,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   Sensitive: 0.2
+  CamBL: {fileID: 0}
+  CamTR: {fileID: 0}
 --- !u!114 &4943449472410228516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,18 +143,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d187a34abf3c4009874c043575ef72f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4943449472410228517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4943449472410228542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c8304ed6e6744a659d758dd05255740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4943449473180102048

@@ -1056,8 +1056,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4943449474335835250}
-        m_TargetAssemblyTypeName: ActivitiController, Assembly-CSharp
+      - m_Target: {fileID: 4943449474335835251}
+        m_TargetAssemblyTypeName: GameController_FreePlay, Assembly-CSharp
         m_MethodName: Scramble
         m_Mode: 1
         m_Arguments:
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4943449472410228515, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
   m_PrefabInstance: {fileID: 4943449474335835248}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4943449474335835250}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a37b93712f7b0a4290ece63f16f1893, type: 3}
@@ -1727,14 +1727,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4943449472410228543, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
   m_PrefabInstance: {fileID: 4943449474335835248}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4943449474335835250 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4943449472410228517, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
+--- !u!1 &4943449474335835250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4943449472410228542, guid: 5f3e97648d3db4a4f94d638d3d76be13, type: 3}
   m_PrefabInstance: {fileID: 4943449474335835248}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &4943449474335835251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4943449474335835250}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c8304ed6e6744a659d758dd05255740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canv: {fileID: 2094646789}
+  waiting: 0
+  turns: 20
